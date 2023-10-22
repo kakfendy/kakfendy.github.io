@@ -11,22 +11,22 @@ jQuery(document).ready(function(){
 	
 	// here all ready functions
 	
-	beker_tm_owl_carousel();
-	beker_tm_down();
-	beker_tm_trigger_menu();
-	beker_tm_nav_bg();
-	beker_tm_modalbox_news();
-	beker_tm_modalbox_service();
-	beker_tm_cursor();
-	beker_tm_imgtosvg();
-	beker_tm_popup();
-	beker_tm_data_images();
-	beker_tm_contact_form();
-	beker_tm_totop();
-	beker_tm_cursor();
+	fendy_tm_owl_carousel();
+	fendy_tm_down();
+	fendy_tm_trigger_menu();
+	fendy_tm_nav_bg();
+	fendy_tm_modalbox_news();
+	fendy_tm_modalbox_service();
+	fendy_tm_cursor();
+	fendy_tm_imgtosvg();
+	fendy_tm_popup();
+	fendy_tm_data_images();
+	fendy_tm_contact_form();
+	fendy_tm_totop();
+	fendy_tm_cursor();
 	
 	jQuery(window).load('body', function(){
-		beker_tm_my_load();
+		fendy_tm_my_load();
 	});
 	
 });
@@ -39,12 +39,12 @@ jQuery(document).ready(function(){
 // ----------------    OWL CAROUSEL    -----------------
 // -----------------------------------------------------
 
-function beker_tm_owl_carousel(){
+function fendy_tm_owl_carousel(){
 
 	"use strict";
 	
-	var carousel			= jQuery('.beker_tm_testimonials .owl-carousel');
-	var carousel2			= jQuery('.beker_tm_news .owl-carousel');
+	var carousel			= jQuery('.fendy_tm_testimonials .owl-carousel');
+	var carousel2			= jQuery('.fendy_tm_news .owl-carousel');
 	
 	var rtlMode	= false;
 
@@ -67,7 +67,7 @@ function beker_tm_owl_carousel(){
 		nav: false,
 		navSpeed: false,
 	});
-	beker_tm_imgtosvg();
+	fendy_tm_imgtosvg();
 	
 	carousel.parent().find('.right_nav').click(function() {
 		carousel.trigger('next.owl.carousel');
@@ -83,7 +83,7 @@ function beker_tm_owl_carousel(){
 	
 	carousel2.each(function(){
 		var e = $(this);
-		beker_tm_news_pagination(e);
+		fendy_tm_news_pagination(e);
 		e.owlCarousel({
 			loop: true,
 			items: 3,
@@ -112,11 +112,11 @@ function beker_tm_owl_carousel(){
 	});
 }
 
-function beker_tm_news_pagination(element){
+function fendy_tm_news_pagination(element){
 	
 	"use strict";
 	
-	var wrapper		= element.closest('.beker_tm_news');
+	var wrapper		= element.closest('.fendy_tm_news');
 	var newsList	= wrapper.find('.news_list');
 	var owlChild	= element.find('li');
 	var liCount		= owlChild.length;
@@ -160,13 +160,13 @@ function beker_tm_news_pagination(element){
 // -----------------    DOWN    ------------------------
 // -----------------------------------------------------
 
-function beker_tm_down(){
+function fendy_tm_down(){
 	
 	"use strict";
 	
-	var topbar		= jQuery('.beker_tm_topbar').outerHeight();
-	jQuery('.beker_tm_hero .beker_tm_button a').on('click',function(){
-		if($('.beker_tm_topbar').length){
+	var topbar		= jQuery('.fendy_tm_topbar').outerHeight();
+	jQuery('.fendy_tm_hero .fendy_tm_button a').on('click',function(){
+		if($('.fendy_tm_topbar').length){
 			if($.attr(this, 'href') !== '#'){
 			$('html, body').animate({
 				scrollTop: $($.attr(this, 'href')).offset().top-topbar+40
@@ -175,7 +175,7 @@ function beker_tm_down(){
 		}
 	});
 	
-	jQuery('.beker_tm_intro .beker_tm_button a').on('click',function(){
+	jQuery('.fendy_tm_intro .fendy_tm_button a').on('click',function(){
 		
 			if($.attr(this, 'href') !== '#'){
 			$('html, body').animate({
@@ -222,13 +222,13 @@ jQuery('.tokyo_progress').each(function() {
 // ---------------   TRIGGER MENU    -------------------
 // -----------------------------------------------------
 
-function beker_tm_trigger_menu(){
+function fendy_tm_trigger_menu(){
 	
 	"use strict";
 
 	var hamburger 		= jQuery('.my_trigger .hamburger');
-	var mobileMenu		= jQuery('.beker_tm_mobile_menu .dropdown');
-	var mobileMenuList	= jQuery('.beker_tm_mobile_menu .dropdown .dropdown_inner ul li a');
+	var mobileMenu		= jQuery('.fendy_tm_mobile_menu .dropdown');
+	var mobileMenuList	= jQuery('.fendy_tm_mobile_menu .dropdown .dropdown_inner ul li a');
 
 	hamburger.on('click',function(){
 		var element 	= jQuery(this);
@@ -254,12 +254,12 @@ function beker_tm_trigger_menu(){
 // --------------   TOPBAR BACKGROUND    ---------------
 // -----------------------------------------------------
 
-function beker_tm_nav_bg(){
+function fendy_tm_nav_bg(){
 	
 	"use strict";
 
 	jQuery(window).on('scroll',function(){
-		var topbar	 		= jQuery('.beker_tm_topbar');
+		var topbar	 		= jQuery('.fendy_tm_topbar');
 		var WinOffset		= jQuery(window).scrollTop();
 
 		if(WinOffset >= 100){
@@ -280,7 +280,7 @@ jQuery('.anchor_nav').onePageNav();
 // ---------------   PRELOADER   -----------------------
 // -----------------------------------------------------
 
-function beker_tm_preloader(){
+function fendy_tm_preloader(){
 	
 	"use strict";
 	
@@ -304,12 +304,12 @@ function beker_tm_preloader(){
 // -------------  MODALBOX NEWS  -------------------
 // -------------------------------------------------
 
-function beker_tm_modalbox_news(){
+function fendy_tm_modalbox_news(){
 	
 	"use strict";
 	
-	var modalBox	= jQuery('.beker_tm_modalbox_news');
-	var list 		= jQuery('.beker_tm_news ul li');
+	var modalBox	= jQuery('.fendy_tm_modalbox_news');
+	var list 		= jQuery('.fendy_tm_news ul li');
 	var closePopup	= modalBox.find('.close');
 	
 	list.each(function(){
@@ -328,7 +328,7 @@ function beker_tm_modalbox_news(){
 			mainImage.css({backgroundImage: 'url('+imgData+')'});
 			title = modalBox.find('.title h3');
 			title.html(titleHref);
-			beker_tm_imgtosvg();
+			fendy_tm_imgtosvg();
 			return false;
 		});
 	});
@@ -344,18 +344,18 @@ function beker_tm_modalbox_news(){
 // -------------  MODALBOX SERVICE -----------------
 // -------------------------------------------------
 
-function beker_tm_modalbox_service(){
+function fendy_tm_modalbox_service(){
 	
 	"use strict";
 	
-	var modalBox	= jQuery('.beker_tm_modalbox_service');
-	var list 		= jQuery('.beker_tm_services ul li');
+	var modalBox	= jQuery('.fendy_tm_modalbox_service');
+	var list 		= jQuery('.fendy_tm_services ul li');
 	var closePopup	= modalBox.find('.close');
 	
 	list.each(function(){
 		var element 	= jQuery(this);
 		var details 	= element.find('.list_inner').html();
-		var buttons 	= element.find('.beker_tm_full_link');
+		var buttons 	= element.find('.fendy_tm_full_link');
 		var mainImage	= element.find('.main');
 		var imgData		= mainImage.data('img-url');
 		buttons.on('click',function(){
@@ -364,7 +364,7 @@ function beker_tm_modalbox_service(){
 			modalBox.find('.description_wrap').html(details);
 			mainImage = modalBox.find('.main');
 			mainImage.css({backgroundImage: 'url('+imgData+')'});
-			beker_tm_imgtosvg();
+			fendy_tm_imgtosvg();
 			return false;
 		});
 	});
@@ -380,12 +380,12 @@ function beker_tm_modalbox_service(){
 // -----------------   MY LOAD    ----------------------
 // -----------------------------------------------------
 
-function beker_tm_my_load(){
+function fendy_tm_my_load(){
 	
 	"use strict";
 	
 	var speed	= 500;
-	setTimeout(function(){beker_tm_preloader();},speed);
+	setTimeout(function(){fendy_tm_preloader();},speed);
 	setTimeout(function(){jQuery('body').addClass('opened');},speed+2000);
 }
 
@@ -399,7 +399,7 @@ function beker_tm_my_load(){
 // ------------------   CURSOR    ----------------------
 // -----------------------------------------------------
 
-function beker_tm_cursor(){
+function fendy_tm_cursor(){
     "use strict";
 	
 	var myCursor	= jQuery('.mouse-cursor');
@@ -425,7 +425,7 @@ function beker_tm_cursor(){
 // ---------------    IMAGE TO SVG    ------------------
 // -----------------------------------------------------
 
-function beker_tm_imgtosvg(){
+function fendy_tm_imgtosvg(){
 	
 	"use strict";
 	
@@ -459,7 +459,7 @@ function beker_tm_imgtosvg(){
 // --------------------   POPUP    ---------------------
 // -----------------------------------------------------
 
-function beker_tm_popup(){
+function fendy_tm_popup(){
 	
 	"use strict";
 
@@ -498,7 +498,7 @@ function beker_tm_popup(){
 // ---------------   DATA IMAGES    --------------------
 // -----------------------------------------------------
 
-function beker_tm_data_images(){
+function fendy_tm_data_images(){
 	
 	"use strict";
 	
@@ -515,7 +515,7 @@ function beker_tm_data_images(){
 // ----------------    CONTACT FORM    -----------------
 // -----------------------------------------------------
 
-function beker_tm_contact_form(){
+function fendy_tm_contact_form(){
 	
 	"use strict";
 	
@@ -561,11 +561,11 @@ function beker_tm_contact_form(){
 // --------------------    TOTOP    --------------------
 // -----------------------------------------------------
 
-function beker_tm_totop(){
+function fendy_tm_totop(){
 	
 	"use strict";
 	
-	jQuery(".beker_tm_totop").on('click', function(e) {
+	jQuery(".fendy_tm_totop").on('click', function(e) {
 		e.preventDefault();		
 		jQuery("html, body").animate({ scrollTop: 0 }, 'slow');
 		return false;
@@ -576,7 +576,7 @@ function beker_tm_totop(){
 // ------------------   CURSOR    ----------------------
 // -----------------------------------------------------
 
-function beker_tm_cursor(){
+function fendy_tm_cursor(){
     "use strict";
 	
 	var myCursor	= jQuery('.mouse-cursor');

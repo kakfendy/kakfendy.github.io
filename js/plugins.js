@@ -212,9 +212,9 @@
 
 		scrollTo: function(target, callback) {
 			var offset 		= $(target).offset().top;
-			var topbar		= jQuery('.beker_tm_topbar').outerHeight();
+			var topbar		= jQuery('.fendy_tm_topbar').outerHeight();
 			
-			if(jQuery('.beker_tm_topbar').length){
+			if(jQuery('.fendy_tm_topbar').length){
 				$('html, body').animate({
 				scrollTop: offset-topbar+40
 			}, this.config.scrollSpeed, this.config.easing, callback);
