@@ -1,10 +1,3 @@
-/*
- * Copyright (c) 2021 marketify
- * Author: marketify
- * This file is made for CURRENT TEMPLATE
-*/
-
-
 jQuery(document).ready(function(){
 
 	"use strict";
@@ -186,38 +179,6 @@ function fendy_tm_down(){
 	});
 }
 
-// -------------------------------------------------
-// -------------  PROGRESS BAR  --------------------
-// -------------------------------------------------
-
-function tdProgress(container){
-	
-	"use strict";
-		
-	container.find('.progress_inner').each(function() {
-		var progress 		= jQuery(this);
-		var pValue 			= parseInt(progress.data('value'), 10);
-		var pColor			= progress.data('color');
-		var pBarWrap 		= progress.find('.bar');
-		var pBar 			= progress.find('.bar_in');
-		var number 			= progress.find('.number');
-		var label 			= progress.find('.label');
-		number.css({right:(100 - pValue)+'%'});
-		setTimeout(function(){label.addClass('opened');},500);
-		pBar.css({width:pValue+'%', backgroundColor:pColor});
-		setTimeout(function(){pBarWrap.addClass('open');});
-	});
-}
-
-jQuery('.tokyo_progress').each(function() {
-
-	"use strict";
-
-	var pWrap 			= jQuery(this);
-	pWrap.waypoint({handler: function(){tdProgress(pWrap);},offset:'90%'});	
-	
-});
-
 // -----------------------------------------------------
 // ---------------   TRIGGER MENU    -------------------
 // -----------------------------------------------------
@@ -275,30 +236,6 @@ function fendy_tm_nav_bg(){
 // -------------------------------------------------
 
 jQuery('.anchor_nav').onePageNav();
-
-// -----------------------------------------------------
-// ---------------   PRELOADER   -----------------------
-// -----------------------------------------------------
-
-function fendy_tm_preloader(){
-	
-	"use strict";
-	
-	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
-	var preloader = $('#preloader');
-	
-	if (!isMobile) {
-		setTimeout(function() {
-			preloader.addClass('preloaded');
-		}, 800);
-		setTimeout(function() {
-			preloader.remove();
-		}, 2000);
-
-	} else {
-		preloader.remove();
-	}
-}
 
 // -------------------------------------------------
 // -------------  MODALBOX NEWS  -------------------
@@ -571,29 +508,3 @@ function fendy_tm_totop(){
 		return false;
 	});
 }
-
-// -----------------------------------------------------
-// ------------------   CURSOR    ----------------------
-// -----------------------------------------------------
-
-function fendy_tm_cursor(){
-    "use strict";
-	
-	var myCursor	= jQuery('.mouse-cursor');
-	
-	if(myCursor.length){
-		if ($("body")) {
-        const e = document.querySelector(".cursor-inner"),
-            t = document.querySelector(".cursor-outer");
-        let n, i = 0,
-            o = !1;
-        window.onmousemove = function (s) {
-            o || (t.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)"), e.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)", n = s.clientY, i = s.clientX
-        }, $("body").on("mouseenter", "a, .melek_tm_topbar .trigger, .cursor-pointer", function () {
-            e.classList.add("cursor-hover"), t.classList.add("cursor-hover")
-        }), $("body").on("mouseleave", "a, .melek_tm_topbar .trigger, .cursor-pointer", function () {
-            $(this).is("a") && $(this).closest(".cursor-pointer").length || (e.classList.remove("cursor-hover"), t.classList.remove("cursor-hover"))
-        }), e.style.visibility = "visible", t.style.visibility = "visible"
-    }
-	}
-};
